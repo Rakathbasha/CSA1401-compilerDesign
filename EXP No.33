@@ -1,0 +1,19 @@
+Write a LEX program to count the number of vowels in the given sentence.
+
+compiler12.l.txt
+
+%{
+    int vow_count=0;
+%}
+ 
+%%
+[aeiouAEIOU] {vow_count++;}
+%%
+int yywrap(){}
+int main()
+{
+    printf("Enter the string of vowels:");
+    yylex();
+    printf("Number of vowels are:  %d\n", vow_count);
+    return 0;
+}
